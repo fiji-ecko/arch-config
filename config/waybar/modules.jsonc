@@ -1,0 +1,185 @@
+{
+    // left modules
+    "custom/icon": {
+        "format": "󰣇",
+        "on-click": "wofi --show drun",
+        "on-click-right": "killall rofi",
+        "tooltip": false
+    },
+    "hyprland/workspaces": {
+        "on-click": "activate",
+        "format": "{icon}",
+        "format-icons": {
+            "default": "",
+            "1": "1",
+            "2": "2",
+            "3": "3",
+            "4": "4",
+            "5": "5",
+            "6": "6",
+            "7": "7",
+            "8": "8",
+            "9": "9",
+            "active": "󱓻",
+            "urgent": "󱓻"
+        },
+        "persistent-workspaces": {
+            "1": [],
+            "2": [],
+            "3": [],
+            "4": [],
+            "5": []
+        }
+    },
+    // center modules
+    "temperature": {
+        "format": "<span color='#F52727'></span> {temperatureC}°C"
+    },
+    "custom/weather": {
+        "format": "{}", 
+        "tooltip": true,
+        "interval": 1800,
+        "return-type": "json",
+        "exec": "cd /home/shoko/.config/waybar/scripts/ && uv run python weather_forecast.py",
+        "on-click": "xdg-open https://openweathermap.org/city/524901"
+    },
+    "memory": {
+        "interval": 10,
+        "format": "<span color='#006FFF'> </span> {percentage}%",
+        "max-length": 10,
+        "tooltip": false
+    },
+    "cpu": {
+        "interval": 1,
+        "format": "<span color='#00FF12'> </span> {usage}%",
+    },
+    // right modules
+    "battery": {
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{icon} {capacity}%",
+        "format-icons": {
+            "charging": [
+                "󰢜",
+                "󰂆",
+                "󰂇",
+                "󰂈",
+                "󰢝",
+                "󰂉",
+                "󰢞",
+                "󰂊",
+                "󰂋",
+                "󰂅"
+            ],
+            "default": [
+                "<span color='#FF0000'></span> ",
+                "<span color='#FF0000'></span> ",
+                "<span color='#FFFB00'></span> ",
+                "<span color='#15FF00'></span> ",
+                "<span color='#15FF00'></span> "
+            ]
+        },
+        "max-length": 25,
+        "tooltip": true
+    },
+    "backlight": {
+        "format": "{icon} {percent}%",
+        "format-icons": [
+            "<span color='#A39800'>󰃞</span>",
+            "<span color='#D1C300'>󰃟</span>",
+            "<span color='#FFEE00'>󰃠</span>"
+        ],
+        "tooltip": false
+    },
+    "wireplumber": {
+        "format": "{icon}  {volume}%",
+        "format-muted": "",
+        "format-icons": [
+            "",
+            "",
+            ""
+        ],
+        "on-click-right": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+        "scroll-step": 5
+    },
+    "wireplumber#sink": {
+        "format": "{volume}% {icon}",
+        "format-muted": "",
+        "format-icons": [
+            "",
+            "",
+            ""
+        ],
+        "on-click": "helvum",
+        "on-click-right": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+        "scroll-step": 5
+    },
+    "wireplumber#source": {
+        "node-type": "Audio/Source",
+        "format": "{volume}% ",
+        "format-muted": "",
+        "on-click-right": "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle",
+        "scroll-step": 5
+    },
+    "hyprland/language": {
+        "format": "{shortDescription}"
+    },
+    "clock": {
+        "format": "{:%H:%M\n<span size='9pt' color='#FFFFFF'>%d.%m.%Y</span>}",
+        "justify": "center",
+        "tooltip-format": "<tt><small>{calendar}</small></tt>",
+        "align": 0.5,
+        "calendar": {
+            "mode": "month",
+            "mode-mon-col": 5,
+            "weeks-pos": "right",
+            "on-scroll": 1,
+            "on-click-right": "mode",
+            "format": {
+                "months": "<span color='#00FF1E'><b>{}</b></span>", // lavender
+                "days": "<span color='#FF00B0'><b>{}</b></span>", // text
+                "weeks": "<span color='#F6FF00'><b>W{}</b></span>", // green
+                "weekdays": "<span color='#cba6f7'><b>{}</b></span>", // mauve
+                "today": "<span color='#74c7ec'><b><u>{}</u></b></span>" // sapphire
+            }
+        },
+        "actions": {
+            "on-click-right": "mode",
+            "on-click-forward": "tz_up",
+            "on-click-backward": "tz_down",
+            "on-scroll-up": "shift_up",
+            "on-scroll-down": "shift_down"
+        }
+    },
+    "network": {
+        "interval": 10,
+        "format-wifi": " ",
+        "format-ethernet": " ",
+        "format-disconnected": " ",
+        "tooltip-format-wifi": "{essid} ({signalStrength}%)",
+        "tooltip-format-ethernet": "{ifname} "
+    },
+    "bluetooth": {
+        "format": "󰂯",
+        "format-disabled": "󰂲",
+        "format-connected": "󰂱 {num_connections}",
+        "format-connected-battery": "󰂱 {device_battery_percentage}%",
+        "tooltip-format": "{controller_alias}\n{controller_address}\n\n{device_enumerate}",
+        "tooltip-format-connected": "{controller_alias}\n\n{device_enumerate}",
+        "tooltip-format-enumerate-connected": "󰂱 {device_alias}",
+        "tooltip-format-enumerate-connected-battery": "󰂱 {device_alias} ({device_battery_percentage}%)"
+    },
+    "custom/power": {
+        "format": "⏻ ",
+        "tooltip": false,
+        "on-click": "sh ~/scripts/powermenu.sh",
+        "on-click-right": "killall rofi"
+    },
+    "tray": {
+        "icon-size": 15,
+        "spacing": 10,
+        "icons": {}
+    }
+}

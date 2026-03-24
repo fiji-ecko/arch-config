@@ -1,0 +1,21 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv
+Pictures/Wallpapers/video/zuki_dance.mp4
+# Игнорировать логи
+*.log
+build_debug.log
+
+# Игнорировать временные файлы
+*.tmp
+*.swp
+
+# Если не хотите хранить скриншоты в Git
+Pictures/Screenshots/
