@@ -1,5 +1,6 @@
 BASE_PACKAGES = [
     # main
+    "plasma",
     "waybar",
     "yazi",
     "git",
@@ -29,7 +30,7 @@ BASE_PACKAGES = [
     # media
     "grim", "slurp", "wl-clipboard",
     "ffmpeg",  # Утилита для работы с медиа
-    "swww",
+    "awww",
     "ncmpcpp", "mpd",  # Клиент для работы с медиа 
     "mpc", # Минималистичный интерфейс командной строки для MPD
     "mpv",  # Просмотр видео
@@ -38,8 +39,6 @@ BASE_PACKAGES = [
     
     # audio
     "pipewire", "pipewire-pulse", "pipewire-alsa", "wireplumber",
-    "helvum",  # GUI for pipewire
-    "pavucontrol",  # Управление звуком с графического интерфейса
 
     # reader / archives
     "zathura", "zat / mediahura-djvu", "zathura-pdf-mupdf",  # Просмотр PDF, DJVU, EPUB файлов
@@ -58,15 +57,11 @@ BASE_PACKAGES = [
     "bluetuith",  # TUI менеджер управления bluetooth
     
     # system utils
-    "swaync",  # Демон уведомлений
-    "dpkg",  # Средство для сборки Debian пакетов
-    "reflector",  # Получить последний список зеркал
     "npm",  # Зависимость для других компонентов
     "gparted",  # Работа с носителями в системе
     "gnu-netcat",  # Утилиты для работы с сетью
     "usbutils",  # Утилиты для работы с USB-устройствами
     "sshfs",  # Монтирование удаленных SSH каталогов локально
-    "netctl",  # Сетевой менеджер на основе CLI
     "openssh",  # Набор программ для поддержки SSH
     
     # fonts
@@ -103,15 +98,9 @@ DEV_PACKAGES = [
     
     # Python
     "python-pip",  # Система управления пакетами Python
-    "bpython",  # Выполнение Python кода построчно
-    "ipython",  # Интерактивный режим Python
 ]
 
 AUR_PACKAGES = [
-    "lazydocker",  # Удобный интерфейс для управления docker
     "cava",  # Вывод спектра для музыки
-    "ptpython",  # Выполнение Python кода построчно
-    "hyx",  # Редактирование и просмотр Hex внутри файла
-    "arttime-git",  # Консольный таймер и секундомер
     "anki",  # Программа для запоминания материала через карточки
 ]
